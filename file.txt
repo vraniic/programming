@@ -1,6 +1,14 @@
 first commit
 Github
 
+KAKO UNDOVATI COMMIT 
+
+-Git reset --soft HEAD~1 
+HEAD je pointer na POSLEDNJI komit koji smo uradili i isto tako je parent prvog sledeceg komita koji cemo uraditi
+HEAD~1 ==> je pretposlednji komit odnosno 1 pre poslednjeg
+HEAD~2 ==> je komit dva pre poslednjeg tj. 1 pre pretposlednjeg
+u ovom slucaju nam sluzi da bi mogli pointujemo na komit koji zelimo da removujemo tj. undo-jemo
+
 git -p = patch level (nisam siguran sta je ptach level iako sam pretrazio na netu)
 git diff - uglavnom se koristi zajedno sa git status kako bi se uporedile promene izmedju dva seta fajlova
 unosi se ovako:
@@ -43,7 +51,7 @@ s druge strane mozemo da undojemo changes i da se vratimo na stadium pre konfilk
 cak i ako krenemo da trackujemo filove neke i da ih ispravlajmo kako bi resili konfilkt i shvatimo na pola puta da to ne valja i dalje mozemo da izadjemo odatle i da se vraitmo na ono kao sto je bilo
 git merge --abort je funckija koja nam je potrebna
 
-konflikt se moze dogoditi kada na primer na dve razlicite grane napravimo drugacije izmene istih linija! 
+konflikt se moze dogoditi kada na primer na dve razlicite grane napravimo drugacije izmene istih linija!
 
 za resavanje konfikata moze se koristiti prosto VScode ili editor u kojem je text napisan ali ako ima previse linija mozemo sacuvati vreme tako sto cemo napisati u terminalu "git merge tool" i onda vidimo sve dokumente u kojima im konflikta
 
@@ -73,3 +81,30 @@ Mergnig:
  mozemo da se vratimo na deo historya koji god nam treba u bilo kom trenutkju
  CONS
  istorija moze postsatu jako JAKO  muddy i messu posl ptevise komitova.
+
+GIT SQUASH 
+git merge --squash feature 
+prvo ce sve promene i komitove na "feature" branchu da squashuje tj. da spoji u jedan ( kako ne bi bilo messy, muddy )
+a onda ce da ih merguje u trenutni branch u kom se nalazimo 
+
+squash mozemo iskoristiti i bez ovog "prvog" dela "git merge" u tom slucaju cemo samo squashovati tj. spojiti sve komitove i promene u jedan
+
+
+HOW TO UNDO MISTAKES WITH GIT USING THE COMMAND LINE <https://www.youtube.com/watch?v=lX9hsdsAeTk> video
+
+git restore <ime fajla> -->
+ brise sve promene do poslednjeg komita koji smo uradili
+
+git restore <ime fajla> 
+ isto se pise kao ova gore ali ova sluzi za slucaj da izbrisemo fajl koji je vec bio komitovan pomocu ove funkcije ga mozemo 'vratiti'
+
+git restore -p <ime fajla>
+ kada hocemo da komitujemo u slucaju da nam se ne svidja odredeni deo toga sto zelimo komitovati - ovim putem mozemo obrisati taj deo
+
+git restore . 
+ ako hocemo da obrisemo sve promene pre komita tacnije ako nam se ne svdija sta smo uradili trenutno 
+
+git commit --ammend -m "NOVA PORUKA"
+ u slucaju da sjebemo komit message ovako je mozemo ispraviti nakon komita (NIKAKO NE KORISTITI ZA KOMITOVE KOJI SU PUSHOVANI NA REMOTE REPO)
+
+

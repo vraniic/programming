@@ -1,1 +1,75 @@
 first commit
+Github
+
+git -p = patch level (nisam siguran sta je ptach level iako sam pretrazio na netu)
+git diff - uglavnom se koristi zajedno sa git status kako bi se uporedile promene izmedju dva seta fajlova
+unosi se ovako:
+diff --git a/ime_fajla b/ime_fajla
+output moze biti:
+-/+ u zavisnosti da li su dodate linije ili obrisane
+BROJ - od koje linije koda krecu promene
+pa zarez (,)
+BROJ - koliko linija koda je oduzeto/dodato
+
+eg. -34,6 +34,8
+
+pocevsi od 34. linije oduzeto je 6 linija koda 
+aa onda je pocev od 34 dodato 8 linija koda
+
+git merge
+merguje branches u granu u kojoj smo trenutno
+git merge <ime grane> i onda ce u nasu granu u kojoj se trenutno nalazimo da merguje tu granu koju smo naveli
+
+git clone URL 
+
+
+
+
+BRANCHES 
+long-running branches: postoje za vreme celog porjekta
+git checkout -b ime_brancha
+commits ne bi trebalo da se puhsuju direktno u long-running branches - vec bi trebalo da se preko short-running brancehs merguju samo u long ones
+
+
+
+
+ pull requests nisu deo gita
+ pull request se koriste kako bi drugi ljudi mogli da vide promene pre nego sto 
+
+
+merge conflicts ?
+ne mozemo da nastavimo dalje dok ne resimo merge conflict
+s druge strane mozemo da undojemo changes i da se vratimo na stadium pre konfilkta.
+cak i ako krenemo da trackujemo filove neke i da ih ispravlajmo kako bi resili konfilkt i shvatimo na pola puta da to ne valja i dalje mozemo da izadjemo odatle i da se vraitmo na ono kao sto je bilo
+git merge --abort je funckija koja nam je potrebna
+
+konflikt se moze dogoditi kada na primer na dve razlicite grane napravimo drugacije izmene istih linija! 
+
+za resavanje konfikata moze se koristiti prosto VScode ili editor u kojem je text napisan ali ako ima previse linija mozemo sacuvati vreme tako sto cemo napisati u terminalu "git merge tool" i onda vidimo sve dokumente u kojima im konflikta
+
+
+MERGE VS REBASE
+
+GIT MERGE --squash imeBranca
+squash nam omogucava da sve prethodne komitove u toj drugoj grani komitujemo u jedan poslednji komit i onda samo taj poslednji komit prebacimo u master branch tj. mergujemo!
+
+VAZNO 
+trebalo bi kada mergujemo da mergujemo Master branch U feature branch i onda tek kad zavrsimo sve promene onda rebasujemo feature u Master
+
+
+GIT REBASE 
+kada rebasujemo mi abandonujemo komitove koje su bili tu na startu (sama rec kaze re-base - obnoviti bazu) 
+NIKAKO NE KORISTITI REBASE U PUBLIC KOMITOVIMA - jer neko moze da pulluje 'bazu' i da zasniva svoj rad na njoj i onda kada je mi promenimo njihov rad verovatno vise nece imat smisla'
+
+rebasing 
+PROS: 
+history nije messy i jako je ez to read
+CONS:
+rewrting history - can lose some context (uglavnom kada sqyashyjemo)
+
+
+Mergnig:
+ PROS  zadrzavamo sitoriju netaknutom
+ mozemo da se vratimo na deo historya koji god nam treba u bilo kom trenutkju
+ CONS
+ istorija moze postsatu jako JAKO  muddy i messu posl ptevise komitova.

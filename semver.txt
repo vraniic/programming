@@ -1,0 +1,18 @@
+SEMVER = Semantic Version 
+
+xx.yy.zz
+xx - Major changes (kada napravis tj. izbacis neku promenu toliko veliku da aplikacija ili ti kod vise nije 'backward compatible') 
+ovo zahteva nesto tipa: 1. da je neki feature removan ili da je neki vazan functionality promenjen koji zahteva od usera promenu koda kako bi prihvatio update. 
+
+yy - Minor changes (uglavnom da je neka funkcija dodata ali je kod i dalje backward compatible. kada se to dogodi koeficijent se uveceava za 1. najvaznija stvar koju treba da znamo je da je ova dodata funkcija optional za instaliranje i da user iako je ne instalira moci ce da koristi aplikaciju kao do sad)
+
+zz - Patch changes (koristi se da bi pokazao da se nije dogodila nikakva vazna promena i kod je logicno i dalje backward compatible 
+uglavnom zanci da se dogodio neki bugfix )
+
+U slucaju da non stop izabcujemo nove package i system raste mozemo se naci u tzv. (dependency hell) 
+
+GIT TAG 
+
+tagovi su mark points --> eg. v1.0.0
+
+git tag -- > listuje sve taagove 

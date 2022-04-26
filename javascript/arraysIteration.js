@@ -32,3 +32,5 @@ webCategories.forEach(uppercaseElement)
 
 
 console.log(webCategories)
+
+// ??

@@ -1,62 +1,72 @@
-let prvi = document.getElementById("prvi");
-prvi.style.backgroundColor = "red";
+const fs = require ('fs')
+const express = require ('express')
 
-let bezDekoracije = document.querySelector("a");
-bezDekoracije.style.textDecoration = "none";
-
-let lista = document.getElementById("lista");
-lista.style.listStyle = "none";
-
-document.getElementById('druga').innerHTML = "treca lista";
-
-// pomocu siblinga
-let trecaLista = (document.getElementById(
-  "druga"
-).nextElementSibling.style.listStyle = "none");
+const path = require('path')
+const app = express()
 
 
-// appendChild
-function dodavanjeChilda () {
-const novaLista = document.createElement('li')
+// app.use(express.urlencoded({extended: false}))
+// app.get('/form', function(req,res) {
+//     res.send()
+// })
 
-const tekstNoveListe = document.createTextNode('cedevita')
+app.get('/', function(req,res) {
+res.send('<h1>Hello World!</h1>')
+})
 
-novaLista.appendChild(tekstNoveListe)
-
-document.getElementById('oLista').appendChild(novaLista)
-}
-
-
-
-let divDugmici = document.getElementById('dugmici')
-
-function topMargin () {
-    divDugmici.style.margin = '50px'
-}
-
-function obrisatiElement () {
-    const dugmePet = document.getElementById('dugmePet')
-    dugmePet.remove()
-}
+app.get('/restaurants', function(req,res) {
+    const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html')
+    res.sendFile(htmlFilePath)
+})
 
 
+app.get('/recommend', function(req,res) {
+    const htmlFilePath = path.join(__dirname, 'views', 'recommend.html')
+    res.sendFile(htmlFilePath)
+})
 
-let kartica = document.getElementById("kartica");
-let imeKartica = document.getElementById('imeKartica');
-let prezimeKartica = document.getElementById('prezimeKartica');
-let polKartica = document.getElementById('polKartica');
+
+app.get('/', function(req,res) {
+    const htmlFilePath = path.join(__dirname, 'views', 'index.html')
+    res.sendFile(htmlFilePath)
+})
 
 
-function getFormvalue() {
-  var x = document.getElementById("form1");
-  for (var i = 0; i < x.length; i++) {
-    if (x.elements[i].value != "Submit") {
-    imeKartica.innerHTML = `${x.elements[0].value}`
-    prezimeKartica.innerHTML = `${x.elements[1].value}`
-    }}
-  }
+app.get('/confirm', function(req,res) {
+    const htmlFilePath = path.join(__dirname, 'views', 'confirm.html')
+    res.sendFile(htmlFilePath)
+})
+
+
+app.get('/about', function(req,res) {
+    const htmlFilePath = path.join(__dirname, 'views', 'about.html')
+    res.sendFile(htmlFilePath)
+})
 
 
 
+// app.post('/store-user', function(req,res) {
+//     const userName = req.body.username
 
+//     const filePath = path.join(__dirname, 'data', 'users.json')
 
+//     const  fileData = fs.readFileSync(filePath);
+//     const existingUsers = JSON.parse(fileData)
+
+//     existingUsers.push(userName)
+
+//     fs.writeFileSync(filePath, JSON.stringify(existingUsers))
+
+//     res.send('<h1>Username stored!</h1>')
+// })
+
+// app.get('/users', function(req,res) {
+//     const filePath = path.join(__dirname, 'data', 'users.json')
+
+//     const  fileData = fs.readFileSync(filePath);
+//     const existingUsers = JSON.parse(fileData)
+
+//     res.send(existingUsers)
+// })
+
+app.listen(3000)

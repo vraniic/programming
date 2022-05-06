@@ -1,0 +1,58 @@
+VAZNO 
+
+imamo <div class="wrapper"> ako zelimo da mu damo neki stajling napisacemo sledece
+.wrapper {
+    stajling...
+}
+ 
+ali ako zelimo sada da damo stajling Paragrafu koji se nalazi unutar tog div "wrappera" do sada bismo pisali 
+.wrapper p {
+    stajling...
+}
+ali uz pomoc Sassa mozemo da samo na ono prvo vec napisao gore gde smo dali stajling "wrapperu" dodamo i stajling p {} to bi izgledalo ovako:
+.wrapper {
+    stajling... 
+    
+    p {
+        stajling...
+    }
+}
+
+takav stajling ce Sass translatovati  u normalan css i racunar ce razumeti sta zelimo da uradimo!
+
+2.
+ukoliko imamo ovakvav element u htmlu: 
+    <div class="main">
+        <p class="main_p"></p>
+    </div>
+
+pre bismo dosli do drugog ovako:
+.main .main_p {
+    stajling...
+}
+
+Ali sada mozemo i ovako:
+.main {
+    stajling 
+
+    &_p {
+        stajling...
+    }
+}
+
+ZNAK & oznacava da element ima istu klasu kao i parent element! ALI ne i da se nalazi u tom element
+ovo gore bi nam dalo output u css fajlu .main_p{} a ne .main .main_p {}
+
+ako zelimo da dobijemo ovo drugo treba da & zavijemo u viticaste zagrade i dodamo "#" ispred = 
+
+.main {
+    stajling 
+
+    #{&}_p {
+        stajling...
+    }
+}  
+
+ovo ce nam dati zeljeni output u css fajlu = .main .main_p {
+    stajling...
+}

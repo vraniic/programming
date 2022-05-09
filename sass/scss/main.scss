@@ -1,0 +1,63 @@
+@import './resets';
+@import './variables';
+
+@function weight($wight-name) {
+    @return map-get($font-weights, $wight-name )
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+
+}
+
+@mixin theme($light-theme: true) {
+    @if  $light-theme {
+        background-color: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+
+}
+
+
+
+body {
+    background: $primary-color;
+    font-weight: map-get($font-weights, bold );
+}
+
+.main {
+    @include flexCenter(row);
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}main_p {
+        font-weight: map-get($font-weights, bold );
+    }
+}
+
+&_burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: set-text-color($primary-color);
+    @include transition-ease;
+}
+
+&::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background: set-text-color;
+}
+
+
+@include mobile {
+
+}

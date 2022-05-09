@@ -1,0 +1,21 @@
+body {
+    width: 50%;
+    background-color:grey;
+    margin: auto;
+    color: white;
+}
+
+form {
+    background-color: #34568B;
+}
+
+label #ime,label #prezime {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 20px;
+}
+

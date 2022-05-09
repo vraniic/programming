@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div>
+        <p id="prvi">Crvena pozadina</p>
+        <a href="#">Bez dekoracije</a>
+        <ul id="ul">
+            <li id="lista">Nema</li>
+            <li id="druga">Tackica</li>
+            <li id="lista3">List Styla</li>
+            
+        </ul>
+
+        <div>
+
+        <ol id="oLista">
+            <li>Voda</li>
+            <li>Kafa</li>
+        </ol>
+        <button onclick="dodavanjeChilda()">Dodati Cedevitu</button>
+        </div>
+
+
+    </div>
+
+
+    <div id="dugmici">
+        <button id="dugme1" onclick="topMargin()">DUGME 1</button>
+        <button onclick="obrisatiElement()">DUGME 2</button>
+        <button>DUGME 3</button>
+        <button>DUGME 4</button>
+        <button id="dugmePet">DUGME 5</button>
+        <button>DUGME 6</button>
+        <button>DUGME 7</button>
+        <button>DUGME 8</button>
+        <button>DUGME 9</button>
+        <button>DUGME 10</button>
+
+    </div>
+
+
+
+    <form id="form1" onclick="getFormvalue()">
+        First name: <input type="text" name="fname" value="Viktor"><br>
+        Last name: <input type="text" name="lname" value="Vranic"><br>
+        <input type="button" value="Submit">
+
+        <div class="kartica" id="kartica">
+
+            <label for="">Ime:</label>
+            <p id="imeKartica">X</p>
+    
+            <label for="">Prezime:</label>
+            <p id="prezimeKartica">X</p>
+    
+            <!-- <label for="">Pol:</label>
+            <p id="polKartica">X</p> -->
+    
+        </div>
+        
+
+        </form>
+
+
+        
+    
+    <!-- <form action="" method="get" class="forma" id="form1">
+    <div class="form-example">
+      <label for="name">Enter your name: </label>
+       <input type="text" name="name" id="name" value="" required>
+     </div>
+     <div class="form-example">
+       <label for="prezime"> Enter your surname: </label>
+        <input type="prezime" name="prezime" id="surname" value="" required>
+     </div>
+      
+     <div>
+      <input type="radio" id="muski" name="pol" value="Muski" checked />
+      <label for="huey">Muski</label>
+    </div>
+
+    <div>
+      <input type="radio" id="zenski" name="pol" value="Zenski" />
+      <label for="dewey">Zenski</label>
+    </div>
+
+    <div>
+      <input type="radio" id="drugo" name="pol" value="Drugo" />
+      <label for="louie">Drugo</label>
+
+    <div class="form-example">
+        <input type="button" value="Make card" id="submit">
+    </div>
+
+    </form> -->
+
+
+    </div>
+    </div>
+  </body>
+</html>

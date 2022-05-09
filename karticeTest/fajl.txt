@@ -1,0 +1,81 @@
+Jquery je lightweight - 'write less do more' js library
+jqeury ej tu da nam olaksa nacin koriscenja JS 
+
+JQUERY LIBRARY contains nexgt 
+HTML/DOM maniputaltions 
+CSS manipulations 
+HTML even methods --> to je npr click() dblclick() mouseover() itd itd
+AJAX (to imamo dole primere i objasnjenje - mainly se koristi za komunikaciju izmejdu servera i da bi mogli da posaljemo neki request serveru a onda nam vrati response vez refreshovanja stranice)
+Utilities --> moramo da imamo znak $ ispred i onda ide zagrada u kojoj treba da navedemo ime utilitija koji zelimo da iskoristimo
+
+-   npr: $.trim('     lots of extra whitespace       ') / $.each()
+$.each() se koristi kako bi iteratovali over arrays i objekata 
+
+
+Jquery se ubacuje u fajl isto kao i javascript fajl. Scrip:src'source''
+
+SELECTIONS!
+ 
+$(CSS selector).action() --> eg.
+$('p').hide()
+$('.test').hide() --> moze da se ovako koristi selektor za klase a za ID je '#' -- ISTO kao u cssu
+
+
+
+JQUERYcontent and atributes
+
+JQUERY GET 
+- SET
+- ADD
+- REMOVE
+- CSS CLASSES
+- CSS()
+- DIMENSIOSNS
+
+
+/////
+/////
+  
+TRAVERSING 
+treversin je mvoe trhough i koristi se da se pornadju HTML aelemnt na osnovu njihovih realationa ka 
+nekim drugim elementima
+pocnemo sa slekecijom jedno elementa --> (move through)
+i nastavim dalje dok ne dodjemo do zeljenog 
+
+move up - ANCESTORS
+move down - DESCENDANTS
+sideways - SIBLINGS
+FLITERING - first () last()
+filter () not () -- ova dva isto spadaju  u filetring i koriste se kako bi slektovali neke elemente koji matchuju ili do not match odredjenu 
+kriteriju!
+
+/////
+/////
+4 stages of AJAX giving response without refreshing whole page.
+
+0: request not initialized 
+1: sercer connection
+2: request recieved 
+3: processing request
+4: request finished and response si ready
+
+GET - requests data from a specified source
+GET se korist isa mokako bi retriovali datu od servera
+
+POST - submits data to be processed to a sprecified source 
+POST se takodje koristi isto kao i get ali nikada POST metoda nece cacheovati datu i cesto se koristi kako bi poslali datu zajedno sa requestom!
+
+
+
+$ || jquery se stavlja ispredlinije gde hocemo da koristimo jquery 
+to je nacin da damo do znanja masini da cem okoristiti taj library. 
+
+-----HTTP 
+common language spoken between the browser and a server 
+
+set pravila koje server i browser moraju da prae kako bi bili u moguncosti da se razumeju preko mreze
+
+-----REST
+architecture style for desginig web application
+
+
